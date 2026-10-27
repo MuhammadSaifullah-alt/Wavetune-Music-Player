@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WaveTune</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+    integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- TOP BAR -->
+  <header>
+    <div class="logo">WaveTune</div>
+    <input id="searchBox" class="search" type="text" placeholder="Search songs, artists, genres">
+    <div class="avatar">
+      🧑
+    </div>
+  </header>
+
+  <div class="layout">
+
+    <!-- LEFT MENU -->
+    <nav id="menu">
+      <button data-view="home" class="active"><i class="fa-solid fa-house"></i><span>Home</span></button>
+      <button data-view="discover"><i class="fa-solid fa-magnifying-glass"></i><span>Discover</span></button>
+      <button data-view="playlists"><i class="fa-solid fa-music"></i><span>Playlists</span></button>
+      <button data-view="favorites"><i class="fa-regular fa-heart"></i><span>Favorites</span></button>
+      <button data-view="recent"><i class="fa-solid fa-repeat"></i> <span>Recently Played</span></button>
+      <button id="settingsBtn" class="settings">⚙ Settings</button>
+    </nav>
+
+    <!-- MIDDLE CONTENT -->
+    <main>
+      <section class="hero" id="hero">
+        <div class="cover big" id="heroCover"></div>
+        <div>
+          <h2 id="heroTitle"></h2>
+          <p id="heroArtist"></p>
+          <p class="small">The most played track on WaveTune this week.</p>
+          <button class="btn blue" id="heroPlay">▶ Play Now</button>
+          <button class="btn outline" id="heroAdd">＋ Add to Playlist</button>
+        </div>
+      </section>
+
+      <div class="chips" id="chips"></div>
+
+      <h3 id="listTitle">Trending Songs</h3>
+      <div class="songs" id="songList"></div>
+
+      <div id="playlistBox">
+        <h3>Playlists</h3>
+        <div class="playlists" id="playlistList"></div>
+      </div>
+    </main>
+
+    <!-- RIGHT PANEL -->
+    <aside>
+      <div class="panel">
+        <h3>Now Playing</h3>
+        <div class="cover art" id="panelCover"></div>
+        <h2 id="panelTitle"></h2>
+        <p id="panelArtist"></p>
+        <div class="row">
+          <button id="favBtn">♡ Favorite</button>
+          <button id="queueBtn">☰ Queue</button>
+        </div>
+        <div class="wave" id="wave"></div>
+        <div class="times"><span id="timeNow">0:00</span><span id="timeLeft">-0:00</span></div>
+      </div>
+    </aside>
+  </div>
+
+  <!-- BOTTOM PLAYER BAR -->
+  <footer>
+    <div class="now">
+      <div class="cover small-cover" id="barCover"></div>
+      <div>
+        <b id="barTitle"></b><br>
+        <span id="barArtist"></span>
+      </div>
+    </div>
+
+    <div class="controls">
+      <div>
+        <button id="shuffleBtn">🔀</button>
+        <button id="prevBtn">⏮</button>
+        <button id="playBtn" class="playbig">▶</button>
+        <button id="nextBtn">⏭</button>
+        <button id="repeatBtn">🔁</button>
+      </div>
+      <input type="range" id="seekBar" min="0" max="100" value="0">
+    </div>
+
+    <div class="volume">
+      <button id="muteBtn">🔊</button>
+      <input type="range" id="volumeBar" min="0" max="100" value="70">
+    </div>
+  </footer>
+
+  <!-- Queue popup and message -->
+  <div id="queueBox"></div>
+  <div id="message"></div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
